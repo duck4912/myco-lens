@@ -14,25 +14,21 @@ public class MushroomDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mushroom_detail);
 
-        // Konfiguracja Toolbara
         Toolbar toolbar = findViewById(R.id.toolbarDetail);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        toolbar.setNavigationOnClickListener(v -> finish()); // Powrót do Atlasu
+        toolbar.setNavigationOnClickListener(v -> finish());
 
-        // Referencje do widoków
         ImageView ivMushroom = findViewById(R.id.ivMushroomDetail);
         TextView tvName = findViewById(R.id.tvMushroomNameDetail);
         TextView tvEdibility = findViewById(R.id.tvMushroomEdibilityDetail);
         TextView tvDescription = findViewById(R.id.tvMushroomDescriptionDetail);
 
-        // Odbieranie ID grzyba
         int mushroomId = getIntent().getIntExtra("MUSHROOM_ID", -1);
 
         if (mushroomId != -1) {
-            // Obsługa kliknięcia w ikonkę maila
             findViewById(R.id.btnShareEmail).setOnClickListener(v -> {
                 String name = tvName.getText().toString();
                 String description = tvDescription.getText().toString();
@@ -50,7 +46,6 @@ public class MushroomDetailActivity extends AppCompatActivity {
                 startActivity(Intent.createChooser(intent, "Wyślij opis mailem przez..."));
             });
 
-            // Obsługa przycisku wysyłki na konkretny adres
             findViewById(R.id.btnSendToEmail).setOnClickListener(v -> {
                 android.widget.EditText etEmail = findViewById(R.id.etEmailAddress);
                 String emailAddress = etEmail.getText().toString().trim();
@@ -76,19 +71,16 @@ public class MushroomDetailActivity extends AppCompatActivity {
                 }
             });
 
-            // Pobieranie danych z bazy Room w tle
             new Thread(() -> {
                 MushroomDatabase db = MushroomDatabase.getDatabase(this);
                 Mushroom mushroom = db.mushroomDao().getMushroomById(mushroomId);
 
                 if (mushroom != null) {
-                    // Powrót do wątku UI, aby wyświetlić dane
                     runOnUiThread(() -> {
                         tvName.setText(mushroom.nazwa);
                         tvEdibility.setText(mushroom.jadalnosc);
                         tvDescription.setText(mushroom.opis);
 
-                        // Dynamiczne ładowanie zdjęcia
                         int imageId = getResources().getIdentifier(mushroom.nazwaObrazka, "drawable", getPackageName());
                         if (imageId != 0) {
                             ivMushroom.setImageResource(imageId);

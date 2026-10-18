@@ -38,7 +38,6 @@ public class MushroomAdapter extends RecyclerView.Adapter<MushroomAdapter.Mushro
         Mushroom mushroom = mushroomList.get(position);
         holder.tvName.setText(mushroom.nazwa);
 
-        // Dynamiczne pobieranie ID zasobu z drawable na podstawie nazwy z bazy danych
         int imageId = context.getResources().getIdentifier(mushroom.nazwaObrazka, "drawable", context.getPackageName());
         if (imageId != 0) {
             holder.ivImage.setImageResource(imageId);
@@ -46,10 +45,8 @@ public class MushroomAdapter extends RecyclerView.Adapter<MushroomAdapter.Mushro
             holder.ivImage.setImageResource(R.drawable.grzyb_glowna); // fallback
         }
 
-        // Obsługa kliknięcia
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, MushroomDetailActivity.class);
-            // Możemy przekazać ID grzyba, aby wyświetlić detale
             intent.putExtra("MUSHROOM_ID", mushroom.id);
             context.startActivity(intent);
         });
