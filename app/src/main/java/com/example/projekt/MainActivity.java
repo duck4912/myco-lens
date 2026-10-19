@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    android.util.Log.e("MainActivity", "Błąd operacji", e);
                 }
 
                 String urlStr = String.format(Locale.ENGLISH,
