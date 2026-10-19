@@ -27,25 +27,20 @@ public class AtlasActivity extends AppCompatActivity {
         }
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
-        // Inicjalizacja RecyclerView
         RecyclerView recyclerView = findViewById(R.id.rvAtlas);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        
-        // Pusta lista na start
+
         adapter = new MushroomAdapter(new ArrayList<>(), this);
         recyclerView.setAdapter(adapter);
 
-        // Baza danych
         database = MushroomDatabase.getDatabase(this);
 
-        // Pobieranie danych w tle
         loadMushrooms();
     }
 
     private void loadMushrooms() {
         new Thread(() -> {
             List<Mushroom> mushrooms = database.mushroomDao().getAllMushrooms();
-            // Powrót do wątku UI, aby zaktualizować listę
             runOnUiThread(() -> {
                 adapter.setMushrooms(mushrooms);
             });
