@@ -25,6 +25,7 @@ drawable podgrzybek_brunatny
 drawable warunki_bg
 id bottomPanel
 id btnAtlas
+id btnBack
 id btnDzienniczek
 id btnGallery
 id btnMap
@@ -43,10 +44,13 @@ id rvAtlas
 id toolbarAtlas
 id toolbarDetail
 id toolbarDzienniczek
+id tvHumidity
+id tvLocationName
 id tvMushroomDescriptionDetail
 id tvMushroomEdibilityDetail
 id tvMushroomName
 id tvMushroomNameDetail
+id tvTemp
 id tvWarunkiTitle
 id vLineLeft
 id vLineRight

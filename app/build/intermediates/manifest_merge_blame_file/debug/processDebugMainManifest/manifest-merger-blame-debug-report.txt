@@ -156,20 +156,20 @@
 84            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 84-->C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:51:13-69
 85        <activity
-85-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\User\.gradle\caches\9.4.1\transforms\35f6f3ae4c5f02bf1a4d4943c8f86dac\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
+85-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\User\.gradle\caches\9.4.1\transforms\a953ee405029bfcec08de6be12b05bd4\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:9-173
 86            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-86-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\User\.gradle\caches\9.4.1\transforms\35f6f3ae4c5f02bf1a4d4943c8f86dac\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:19-85
+86-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\User\.gradle\caches\9.4.1\transforms\a953ee405029bfcec08de6be12b05bd4\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:19-85
 87            android:exported="false"
-87-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\User\.gradle\caches\9.4.1\transforms\35f6f3ae4c5f02bf1a4d4943c8f86dac\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:22:19-43
+87-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\User\.gradle\caches\9.4.1\transforms\a953ee405029bfcec08de6be12b05bd4\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:146-170
 88            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-88-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\User\.gradle\caches\9.4.1\transforms\35f6f3ae4c5f02bf1a4d4943c8f86dac\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:21:19-78
+88-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\User\.gradle\caches\9.4.1\transforms\a953ee405029bfcec08de6be12b05bd4\transformed\jetified-play-services-base-18.5.0\AndroidManifest.xml:5:86-145
 89
 90        <meta-data
-90-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\User\.gradle\caches\9.4.1\transforms\db7ebe6ee8b151258861fd9f1c46e6f8\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+90-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\User\.gradle\caches\9.4.1\transforms\8b3f22be4ffe053511ea8deca90646bb\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
 91            android:name="com.google.android.gms.version"
-91-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\User\.gradle\caches\9.4.1\transforms\db7ebe6ee8b151258861fd9f1c46e6f8\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+91-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\User\.gradle\caches\9.4.1\transforms\8b3f22be4ffe053511ea8deca90646bb\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
 92            android:value="@integer/google_play_services_version" />
-92-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\User\.gradle\caches\9.4.1\transforms\db7ebe6ee8b151258861fd9f1c46e6f8\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+92-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\User\.gradle\caches\9.4.1\transforms\8b3f22be4ffe053511ea8deca90646bb\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
 93
 94        <service
 94-->[androidx.room:room-runtime:2.6.1] C:\Users\User\.gradle\caches\9.4.1\transforms\7039080a5037fd13045cecb29e2c13b9\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63

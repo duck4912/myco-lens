@@ -1,98 +1,102 @@
 [
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_borowik_szlachetny.jpg.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/borowik_szlachetny.jpg"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_muchomor_czerwony.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\muchomor_czerwony.webp"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_warunki_bg.xml.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/warunki_bg.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_pieprznik_jadalny.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\pieprznik_jadalny.jpg"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/layout_activity_main.xml.flat",
-        "source": "com.example.projekt.app-main-51:/layout/activity_main.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_ic_closed_book.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\ic_closed_book.xml"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_circle_bg_semi.xml.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/circle_bg_semi.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\layout_activity_mushroom_detail.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\layout\\activity_mushroom_detail.xml"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_mleczaj_rydz.jpg.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/mleczaj_rydz.jpg"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_kozlarz_babka.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\kozlarz_babka.jpg"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_podgrzybek_brunatny.jpg.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/podgrzybek_brunatny.jpg"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_maslak_zwyczajny.jpeg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\maslak_zwyczajny.jpeg"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/layout_activity_mushroom_detail.xml.flat",
-        "source": "com.example.projekt.app-main-51:/layout/activity_mushroom_detail.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_mleczaj_rydz.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\mleczaj_rydz.jpg"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/layout_item_mushroom.xml.flat",
-        "source": "com.example.projekt.app-main-51:/layout/item_mushroom.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_muchomor_sromotnikowy.jpeg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\muchomor_sromotnikowy.jpeg"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_pieprznik_jadalny.jpg.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/pieprznik_jadalny.jpg"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\layout_activity_empty.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\layout\\activity_empty.xml"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_czubajka_kania.jpg.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/czubajka_kania.jpg"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_warunki_bg.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\warunki_bg.xml"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_ic_location_pin.xml.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/ic_location_pin.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\layout_activity_atlas.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\layout\\activity_atlas.xml"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_circle_bg.xml.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/circle_bg.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\layout_activity_dzienniczek.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\layout\\activity_dzienniczek.xml"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_gaska_zielonka.jpg.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/gaska_zielonka.jpg"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_circle_bg.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\circle_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_ic_open_book.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\ic_open_book.xml"
     },
     {
         "merged": "com.example.projekt.app-debug-49:/layout_activity_map.xml.flat",
         "source": "com.example.projekt.app-main-51:/layout/activity_map.xml"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_muchomor_czerwony.webp.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/muchomor_czerwony.webp"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_borowik_szlachetny.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\borowik_szlachetny.jpg"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_kozlarz_babka.jpg.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/kozlarz_babka.jpg"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_grzyb_glowna.png.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/grzyb_glowna.png"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_gaska_zielonka.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\gaska_zielonka.jpg"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/layout_activity_empty.xml.flat",
-        "source": "com.example.projekt.app-main-51:/layout/activity_empty.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_czubajka_kania.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\czubajka_kania.jpg"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_ic_closed_book.xml.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/ic_closed_book.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_podgrzybek_brunatny.jpg.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\podgrzybek_brunatny.jpg"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_maslak_zwyczajny.jpeg.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/maslak_zwyczajny.jpeg"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_grzyb_glowna.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\grzyb_glowna.png"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_ic_open_book.xml.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/ic_open_book.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\layout_item_mushroom.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\layout\\item_mushroom.xml"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/drawable_muchomor_sromotnikowy.jpeg.flat",
-        "source": "com.example.projekt.app-main-51:/drawable/muchomor_sromotnikowy.jpeg"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_ic_location_pin.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\ic_location_pin.xml"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/layout_activity_dzienniczek.xml.flat",
-        "source": "com.example.projekt.app-main-51:/layout/activity_dzienniczek.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\drawable_circle_bg_semi.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\drawable\\circle_bg_semi.xml"
     },
     {
-        "merged": "com.example.projekt.app-debug-49:/layout_activity_atlas.xml.flat",
-        "source": "com.example.projekt.app-main-51:/layout/activity_atlas.xml"
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-debug-49:\\layout_activity_map.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\9.4.1\\com.example.projekt.app-main-51:\\layout\\activity_map.xml"
     }
 ]

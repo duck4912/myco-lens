@@ -7,7 +7,6 @@
     android:background="@color/forest_green_bg"
     tools:context=".MainActivity">
 
-    <!-- Powiekszona ilustracja grzyba -->
     <ImageView
         android:id="@+id/ivMushroomIllustration"
         android:layout_width="0dp"
@@ -20,7 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Section: Warunki w lesie - wiekszy odstep -->
     <TextView
         android:id="@+id/tvWarunkiTitle"
         android:layout_width="wrap_content"
@@ -72,9 +70,10 @@
         app:layout_constraintTop_toBottomOf="@id/tvWarunkiTitle">
 
         <TextView
+            android:id="@+id/tvTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🌡️ 21°C"
+            android:text="🌡️ --°C"
             android:textColor="@color/dark_forest_green"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -88,9 +87,10 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/tvLocationName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="📍 Złoty Potok"
+            android:text="📍 Pobieranie..."
             android:textColor="@color/dark_forest_green"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -104,15 +104,15 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/tvHumidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="💧 WIL. 91%"
+            android:text="💧 WIL. --%"
             android:textColor="@color/dark_forest_green"
             android:textSize="15sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Wieksze odstepy miedzy sekcjami menu -->
     <LinearLayout
         android:id="@+id/btnDzienniczek"
         android:layout_width="0dp"
@@ -195,7 +195,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnAtlas" />
 
-    <!-- Panel Dolny - zwiekszona wysokosc i lepsze rozmieszczenie -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomPanel"
         android:layout_width="match_parent"

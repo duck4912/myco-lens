@@ -24,6 +24,7 @@ int drawable podgrzybek_brunatny 0x0
 int drawable warunki_bg 0x0
 int id bottomPanel 0x0
 int id btnAtlas 0x0
+int id btnBack 0x0
 int id btnDzienniczek 0x0
 int id btnGallery 0x0
 int id btnMap 0x0
@@ -42,10 +43,13 @@ int id rvAtlas 0x0
 int id toolbarAtlas 0x0
 int id toolbarDetail 0x0
 int id toolbarDzienniczek 0x0
+int id tvHumidity 0x0
+int id tvLocationName 0x0
 int id tvMushroomDescriptionDetail 0x0
 int id tvMushroomEdibilityDetail 0x0
 int id tvMushroomName 0x0
 int id tvMushroomNameDetail 0x0
+int id tvTemp 0x0
 int id tvWarunkiTitle 0x0
 int id vLineLeft 0x0
 int id vLineRight 0x0

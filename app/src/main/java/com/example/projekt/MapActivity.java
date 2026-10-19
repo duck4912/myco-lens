@@ -24,13 +24,11 @@ public class MapActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_map);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("Mapa Miejscówek");
-        }
-
         map = findViewById(R.id.mapView);
         map.setMultiTouchControls(true);
+        findViewById(R.id.btnBack).setOnClickListener(v -> {
+            finish();
+        });
 
         map.setTileSource(new XYTileSource(
                 "OpenTopoMap",
@@ -102,9 +100,4 @@ public class MapActivity extends AppCompatActivity {
         if (map != null) map.onPause();
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        finish();
-        return true;
-    }
 }
