@@ -20,6 +20,7 @@ int drawable mleczaj_rydz 0x0
 int drawable muchomor_czerwony 0x0
 int drawable muchomor_sromotnikowy 0x0
 int drawable pieprznik_jadalny 0x0
+int drawable pinezka 0x0
 int drawable podgrzybek_brunatny 0x0
 int drawable warunki_bg 0x0
 int id bottomPanel 0x0
@@ -28,6 +29,7 @@ int id btnBack 0x0
 int id btnDzienniczek 0x0
 int id btnGallery 0x0
 int id btnMap 0x0
+int id btnMyLocation 0x0
 int id btnScan 0x0
 int id btnSendToEmail 0x0
 int id btnShareEmail 0x0

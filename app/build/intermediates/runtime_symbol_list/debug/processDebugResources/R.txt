@@ -3201,6 +3201,7 @@ int drawable osm_ic_follow_me_on 0x7f070114
 int drawable osm_ic_ic_map_ortho 0x7f070115
 int drawable person 0x7f070116
 int drawable pieprznik_jadalny 0x7f070117
+int drawable pinezka 0x7f070125
 int drawable podgrzybek_brunatny 0x7f070118
 int drawable preference_list_divider_material 0x7f070119
 int drawable previous 0x7f07011a
@@ -3321,6 +3322,7 @@ int id btnBack 0x7f08022a
 int id btnDzienniczek 0x7f080067
 int id btnGallery 0x7f080068
 int id btnMap 0x7f080069
+int id btnMyLocation 0x7f08022b
 int id btnScan 0x7f08006a
 int id btnSendToEmail 0x7f08006b
 int id btnShareEmail 0x7f08006c

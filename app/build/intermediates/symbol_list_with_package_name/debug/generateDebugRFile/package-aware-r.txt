@@ -21,6 +21,7 @@ drawable mleczaj_rydz
 drawable muchomor_czerwony
 drawable muchomor_sromotnikowy
 drawable pieprznik_jadalny
+drawable pinezka
 drawable podgrzybek_brunatny
 drawable warunki_bg
 id bottomPanel
@@ -29,6 +30,7 @@ id btnBack
 id btnDzienniczek
 id btnGallery
 id btnMap
+id btnMyLocation
 id btnScan
 id btnSendToEmail
 id btnShareEmail
