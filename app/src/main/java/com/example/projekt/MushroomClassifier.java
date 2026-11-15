@@ -68,7 +68,8 @@ public class MushroomClassifier {
     }
 
     public ClassificationResult classify(Bitmap bitmap) {
-        Bitmap resizedBitmap = Bitmap.createScaledBitmap(bitmap, IMAGE_SIZE, IMAGE_SIZE, true);
+        Bitmap croppedBitmap = centerCropToSquare(bitmap);
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(croppedBitmap, IMAGE_SIZE, IMAGE_SIZE, true);
         ByteBuffer inputBuffer = convertBitmapToByteBuffer(resizedBitmap);
 
         float[][] outputProbabilities = new float[1][labels.size()];
@@ -84,6 +85,15 @@ public class MushroomClassifier {
         }
 
         return new ClassificationResult(labels.get(maxIndex), maxProb);
+    }
+
+    private Bitmap centerCropToSquare(Bitmap bitmap) {
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+        int newEdge = Math.min(width, height);
+        int xOffset = (width - newEdge) / 2;
+        int yOffset = (height - newEdge) / 2;
+        return Bitmap.createBitmap(bitmap, xOffset, yOffset, newEdge, newEdge);
     }
 
     private ByteBuffer convertBitmapToByteBuffer(Bitmap bitmap) {

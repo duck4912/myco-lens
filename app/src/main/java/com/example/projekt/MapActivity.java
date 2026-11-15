@@ -21,6 +21,8 @@ import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
+import java.util.List;
+
 public class MapActivity extends AppCompatActivity {
 
     private MapView map;
@@ -29,6 +31,8 @@ public class MapActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        MushroomRepository.INSTANCE.init(this);
 
         Configuration.getInstance().setUserAgentValue("MycoLensStudentThesisApp_v2026");
         Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this));
@@ -65,6 +69,7 @@ public class MapActivity extends AppCompatActivity {
         canvas.drawCircle(outerSize / 2f, outerSize / 2f, outerSize / 2f, paint);
         paint.setColor(android.graphics.Color.parseColor("#0088FF"));
         canvas.drawCircle(outerSize / 2f, outerSize / 2f, (outerSize / 2f) - (2 * density), paint);
+
         myLocationOverlay.setPersonIcon(locationBitmap);
         myLocationOverlay.setDirectionIcon(locationBitmap);
         myLocationOverlay.setDrawAccuracyEnabled(true);
@@ -82,31 +87,38 @@ public class MapActivity extends AppCompatActivity {
         });
 
         Drawable mushroomPin = getCustomMushroomMarker();
+        List<MushroomFind> finds = MushroomRepository.INSTANCE.getFinds();
 
-        // Marker 1: Borowik szlachetny
-        GeoPoint punkt1 = new GeoPoint(50.6865, 19.3980);
-        Marker marker1 = new Marker(map);
-        marker1.setPosition(punkt1);
-        marker1.setTitle("Borowik szlachetny");
-        marker1.setSnippet("Znaleziono: 18.10.2026 - pod dębem\n(Kliknij ponownie, aby nawigować)");
-        marker1.setIcon(mushroomPin);
-        marker1.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        setupMarkerNavigation(marker1);
-        map.getOverlays().add(marker1);
+        GeoPoint centerPoint = new GeoPoint(50.7061, 19.3872);
 
-        // Marker 2: Podgrzybek brunatny
-        GeoPoint punkt2 = new GeoPoint(50.7020, 19.4120);
-        Marker marker2 = new Marker(map);
-        marker2.setPosition(punkt2);
-        marker2.setTitle("Podgrzybek brunatny");
-        marker2.setSnippet("Znaleziono: 17.10.2026 - wilgotny mech\n(Kliknij ponownie, aby nawigować)");
-        marker2.setIcon(mushroomPin);
-        marker2.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        setupMarkerNavigation(marker2);
-        map.getOverlays().add(marker2);
+        for (int i = 0; i < finds.size(); i++) {
+            MushroomFind find = finds.get(i);
+            GeoPoint point = new GeoPoint(find.getLatitude(), find.getLongitude());
+            if (i == 0) {
+                centerPoint = point;
+            }
 
-        map.getController().setZoom(13.5);
-        map.getController().setCenter(punkt1);
+            Marker marker = new Marker(map);
+            marker.setPosition(point);
+            marker.setTitle(find.getName());
+            String opis = find.getDescription().isEmpty() ? "" : " - " + find.getDescription();
+            marker.setSnippet("Znaleziono: " + find.getDate() + opis + "\n(Kliknij ponownie, aby nawigować)");
+            marker.setIcon(mushroomPin);
+            marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+            setupMarkerNavigation(marker);
+            map.getOverlays().add(marker);
+        }
+
+        if (getIntent().hasExtra("FOCUS_LAT") && getIntent().hasExtra("FOCUS_LON")) {
+            double focusLat = getIntent().getDoubleExtra("FOCUS_LAT", centerPoint.getLatitude());
+            double focusLon = getIntent().getDoubleExtra("FOCUS_LON", centerPoint.getLongitude());
+            centerPoint = new GeoPoint(focusLat, focusLon);
+            map.getController().setZoom(16.0);
+        } else {
+            map.getController().setZoom(13.5);
+        }
+
+        map.getController().setCenter(centerPoint);
         map.invalidate();
     }
 

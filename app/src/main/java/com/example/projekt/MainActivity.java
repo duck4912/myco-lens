@@ -28,10 +28,14 @@ import com.google.android.gms.location.Priority;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Executors;
@@ -41,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final double DEFAULT_LATITUDE = 50.8118;
     private static final double DEFAULT_LONGITUDE = 19.1203;
+
+    private double currentLat = DEFAULT_LATITUDE;
+    private double currentLon = DEFAULT_LONGITUDE;
 
     private MushroomDatabase database;
     private MushroomDao mushroomDao;
@@ -99,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        MushroomRepository.INSTANCE.init(this);
+
         tvTemp = findViewById(R.id.tvTemp);
         tvHumidity = findViewById(R.id.tvHumidity);
         tvLocationName = findViewById(R.id.tvLocationName);
@@ -107,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
         mushroomDao = database.mushroomDao();
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        // Inicjalizacja modelu TensorFlow Lite
         try {
             classifier = new MushroomClassifier(this);
         } catch (Throwable e) {
@@ -145,11 +153,11 @@ public class MainActivity extends AppCompatActivity {
 
             MushroomClassifier.ClassificationResult result = classifier.classify(argbBitmap);
 
-            runOnUiThread(() -> pokazWynikKlasyfikacji(result));
+            runOnUiThread(() -> pokazWynikKlasyfikacji(result, argbBitmap));
         });
     }
 
-    private void pokazWynikKlasyfikacji(MushroomClassifier.ClassificationResult result) {
+    private void pokazWynikKlasyfikacji(MushroomClassifier.ClassificationResult result, Bitmap photoBitmap) {
         String sformatowanaNazwa = formatujNazweGatunku(result.label);
         float procent = result.confidence * 100f;
 
@@ -167,10 +175,53 @@ public class MainActivity extends AppCompatActivity {
                 .setMessage(String.format(Locale.getDefault(),
                         "Rozpoznany gatunek:\n%s\n\nPewność modelu: %.1f%%%s",
                         sformatowanaNazwa, procent, ostrzezenie))
-                .setPositiveButton("Otwórz Atlas", (dialog, which) ->
+                .setPositiveButton("Zapisz na mapie", (dialog, which) ->
+                        zapiszZnaleziskoIOtworzMape(sformatowanaNazwa, procent, photoBitmap))
+                .setNeutralButton("Otwórz Atlas", (dialog, which) ->
                         startActivity(new Intent(MainActivity.this, AtlasActivity.class)))
                 .setNegativeButton("Zamknij", null)
                 .show();
+    }
+
+    private void zapiszZnaleziskoIOtworzMape(String nazwaGatunku, float pewnosc, Bitmap bitmap) {
+        String savedPhotoPath = zapiszZdjecieDoPamieci(bitmap);
+        String dzisiejszaData = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault()).format(new Date());
+        String opis = String.format(Locale.getDefault(), "Skan AI (pewność: %.1f%%)", pewnosc);
+
+        MushroomFind noweZnalezisko = new MushroomFind(
+                System.currentTimeMillis(),
+                nazwaGatunku,
+                dzisiejszaData,
+                currentLat,
+                currentLon,
+                opis,
+                savedPhotoPath
+        );
+
+        MushroomRepository.INSTANCE.addFind(this, noweZnalezisko);
+        Toast.makeText(this, "Zapisano w Dzienniczku i na Mapie!", Toast.LENGTH_SHORT).show();
+
+        Intent mapIntent = new Intent(MainActivity.this, MapActivity.class);
+        mapIntent.putExtra("FOCUS_LAT", currentLat);
+        mapIntent.putExtra("FOCUS_LON", currentLon);
+        startActivity(mapIntent);
+    }
+
+    private String zapiszZdjecieDoPamieci(Bitmap bitmap) {
+        try {
+            File dir = new File(getFilesDir(), "mushroom_photos");
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+            File file = new File(dir, "find_" + System.currentTimeMillis() + ".jpg");
+            try (FileOutputStream out = new FileOutputStream(file)) {
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 85, out);
+            }
+            return file.getAbsolutePath();
+        } catch (IOException e) {
+            Log.e(TAG, "Błąd zapisu zdjęcia znaleziska", e);
+            return null;
+        }
     }
 
     private String formatujNazweGatunku(String rawLabel) {
@@ -236,11 +287,15 @@ public class MainActivity extends AppCompatActivity {
         fusedLocationClient.getCurrentLocation(Priority.PRIORITY_BALANCED_POWER_ACCURACY, null)
                 .addOnSuccessListener(this, location -> {
                     if (location != null) {
-                        odpytajApiPogodowe(location.getLatitude(), location.getLongitude());
+                        currentLat = location.getLatitude();
+                        currentLon = location.getLongitude();
+                        odpytajApiPogodowe(currentLat, currentLon);
                     } else {
                         fusedLocationClient.getLastLocation().addOnSuccessListener(this, lastLoc -> {
                             if (lastLoc != null) {
-                                odpytajApiPogodowe(lastLoc.getLatitude(), lastLoc.getLongitude());
+                                currentLat = lastLoc.getLatitude();
+                                currentLon = lastLoc.getLongitude();
+                                odpytajApiPogodowe(currentLat, currentLon);
                             } else {
                                 odpytajApiPogodowe(DEFAULT_LATITUDE, DEFAULT_LONGITUDE);
                             }
