@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:2:1-54:12
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:2:1-58:12
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\User\.gradle\caches\9.4.1\transforms\2f1123ca3db4c588147a58d151ff7e2c\transformed\material-1.10.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\User\.gradle\caches\9.4.1\transforms\8ff628796fe527f8ca21a714ffe50105\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\User\.gradle\caches\9.4.1\transforms\a00a327b41bc938486470aeab58eeaaa\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -67,6 +67,8 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\User\.gradle\caches\9.4.1\tran
 MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\User\.gradle\caches\9.4.1\transforms\98c40aa938259c309078e923c5762b43\transformed\jetified-tracing-1.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.runtime:runtime-annotation-android:1.9.0] C:\Users\User\.gradle\caches\9.4.1\transforms\5a4d02a56565f9cc05581dbdce704737\transformed\jetified-runtime-annotation\AndroidManifest.xml:2:1-7:12
 MERGED from [org.osmdroid:osmdroid-android:6.1.18] C:\Users\User\.gradle\caches\9.4.1\transforms\06729e7861ad9445c924772d74ad16a4\transformed\jetified-osmdroid-android-6.1.18\AndroidManifest.xml:2:1-27:12
+MERGED from [com.google.ai.edge.litert:litert:1.0.1] C:\Users\User\.gradle\caches\9.4.1\transforms\fb193c720377d17b530bbebf45afe78a\transformed\jetified-litert-1.0.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.ai.edge.litert:litert-api:1.0.1] C:\Users\User\.gradle\caches\9.4.1\transforms\f73bdd3f63b6641e396b1cca7d025ea9\transformed\jetified-litert-api-1.0.1\AndroidManifest.xml:2:1-11:12
 	package
 		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:3:5-34
 		INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml
@@ -76,35 +78,39 @@ MERGED from [org.osmdroid:osmdroid-android:6.1.18] C:\Users\User\.gradle\caches\
 		INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:2:11-69
-uses-permission#android.permission.CAMERA
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:5:5-65
-	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:5:22-62
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:7:5-67
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:7:22-64
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:8:5-79
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:6:5-79
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:8:22-76
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:6:22-76
 uses-feature#android.hardware.camera
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:10:5-12:36
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:8:5-10:36
 	android:required
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:12:9-33
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:10:9-33
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:11:9-47
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:9:9-47
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:14:5-79
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:12:5-79
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:14:22-76
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:12:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:15:5-81
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:13:5-81
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:15:22-78
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:13:22-78
+queries
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:15:5-19:15
+intent#action:name:android.media.action.IMAGE_CAPTURE
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:16:9-18:18
+action#android.media.action.IMAGE_CAPTURE
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:17:13-73
+	android:name
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:17:21-70
 application
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:17:5-52:19
-INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:17:5-52:19
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:21:5-56:19
+INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:21:5-56:19
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\User\.gradle\caches\9.4.1\transforms\2f1123ca3db4c588147a58d151ff7e2c\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\User\.gradle\caches\9.4.1\transforms\2f1123ca3db4c588147a58d151ff7e2c\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\User\.gradle\caches\9.4.1\transforms\8ff628796fe527f8ca21a714ffe50105\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -133,76 +139,80 @@ MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\User\.gr
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\User\.gradle\caches\9.4.1\transforms\0e81ddb0394562a36644999651c70bcd\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\User\.gradle\caches\9.4.1\transforms\cf5aff315cc4484d8a9c16d083b9a830\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\User\.gradle\caches\9.4.1\transforms\cf5aff315cc4484d8a9c16d083b9a830\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [com.google.ai.edge.litert:litert:1.0.1] C:\Users\User\.gradle\caches\9.4.1\transforms\fb193c720377d17b530bbebf45afe78a\transformed\jetified-litert-1.0.1\AndroidManifest.xml:9:5-20
+MERGED from [com.google.ai.edge.litert:litert:1.0.1] C:\Users\User\.gradle\caches\9.4.1\transforms\fb193c720377d17b530bbebf45afe78a\transformed\jetified-litert-1.0.1\AndroidManifest.xml:9:5-20
+MERGED from [com.google.ai.edge.litert:litert-api:1.0.1] C:\Users\User\.gradle\caches\9.4.1\transforms\f73bdd3f63b6641e396b1cca7d025ea9\transformed\jetified-litert-api-1.0.1\AndroidManifest.xml:9:5-20
+MERGED from [com.google.ai.edge.litert:litert-api:1.0.1] C:\Users\User\.gradle\caches\9.4.1\transforms\f73bdd3f63b6641e396b1cca7d025ea9\transformed\jetified-litert-api-1.0.1\AndroidManifest.xml:9:5-20
 	android:extractNativeLibs
 		INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml
 	android:requestLegacyExternalStorage
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:21:9-52
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:25:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.18.0] C:\Users\User\.gradle\caches\9.4.1\transforms\07fe0faba258372a786cc531d5e2c4af\transformed\core-1.18.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:23:9-35
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:27:9-35
 	android:label
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:20:9-37
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:24:9-37
 	android:roundIcon
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:22:9-61
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:26:9-61
 	android:icon
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:19:9-56
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:23:9-56
 	android:allowBackup
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:22:9-35
 	android:theme
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:24:9-65
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:28:9-65
 activity#com.example.projekt.MapActivity
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:25:9-27:40
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:29:9-31:40
 	android:exported
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:27:13-37
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:31:13-37
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:26:13-40
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:30:13-40
 activity#com.example.projekt.MainActivity
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:28:9-36:20
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:32:9-40:20
 	android:exported
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:30:13-36
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:34:13-36
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:29:13-41
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:33:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:31:13-35:29
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:35:13-39:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:32:17-69
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:36:17-69
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:32:25-66
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:36:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:34:17-77
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:38:17-77
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:34:27-74
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:38:27-74
 activity#com.example.projekt.EmptyActivity
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:37:9-39:40
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:41:9-43:40
 	android:exported
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:39:13-37
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:43:13-37
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:38:13-42
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:42:13-42
 activity#com.example.projekt.AtlasActivity
-ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:40:9-43:72
-	android:exported
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:42:13-37
-	android:theme
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:43:13-69
-	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:41:13-42
-activity#com.example.projekt.DzienniczekActivity
 ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:44:9-47:72
 	android:exported
 		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:46:13-37
 	android:theme
 		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:47:13-69
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:45:13-48
-activity#com.example.projekt.MushroomDetailActivity
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:45:13-42
+activity#com.example.projekt.DzienniczekActivity
 ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:48:9-51:72
 	android:exported
 		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:50:13-37
 	android:theme
 		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:51:13-69
 	android:name
-		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:49:13-51
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:49:13-48
+activity#com.example.projekt.MushroomDetailActivity
+ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:52:9-55:72
+	android:exported
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:54:13-37
+	android:theme
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:55:13-69
+	android:name
+		ADDED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml:53:13-51
 uses-sdk
 INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml
@@ -333,6 +343,10 @@ MERGED from [androidx.compose.runtime:runtime-annotation-android:1.9.0] C:\Users
 MERGED from [androidx.compose.runtime:runtime-annotation-android:1.9.0] C:\Users\User\.gradle\caches\9.4.1\transforms\5a4d02a56565f9cc05581dbdce704737\transformed\jetified-runtime-annotation\AndroidManifest.xml:5:5-44
 MERGED from [org.osmdroid:osmdroid-android:6.1.18] C:\Users\User\.gradle\caches\9.4.1\transforms\06729e7861ad9445c924772d74ad16a4\transformed\jetified-osmdroid-android-6.1.18\AndroidManifest.xml:5:5-7:41
 MERGED from [org.osmdroid:osmdroid-android:6.1.18] C:\Users\User\.gradle\caches\9.4.1\transforms\06729e7861ad9445c924772d74ad16a4\transformed\jetified-osmdroid-android-6.1.18\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.ai.edge.litert:litert:1.0.1] C:\Users\User\.gradle\caches\9.4.1\transforms\fb193c720377d17b530bbebf45afe78a\transformed\jetified-litert-1.0.1\AndroidManifest.xml:6:5-7:38
+MERGED from [com.google.ai.edge.litert:litert:1.0.1] C:\Users\User\.gradle\caches\9.4.1\transforms\fb193c720377d17b530bbebf45afe78a\transformed\jetified-litert-1.0.1\AndroidManifest.xml:6:5-7:38
+MERGED from [com.google.ai.edge.litert:litert-api:1.0.1] C:\Users\User\.gradle\caches\9.4.1\transforms\f73bdd3f63b6641e396b1cca7d025ea9\transformed\jetified-litert-api-1.0.1\AndroidManifest.xml:6:5-7:38
+MERGED from [com.google.ai.edge.litert:litert-api:1.0.1] C:\Users\User\.gradle\caches\9.4.1\transforms\f73bdd3f63b6641e396b1cca7d025ea9\transformed\jetified-litert-api-1.0.1\AndroidManifest.xml:6:5-7:38
 	android:targetSdkVersion
 		INJECTED from C:\Users\User\Desktop\myco-lens\app\src\main\AndroidManifest.xml
 	android:minSdkVersion

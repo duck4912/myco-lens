@@ -3,8 +3,12 @@ package com.example.projekt;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.ImageDecoder;
 import android.location.Address;
 import android.location.Geocoder;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -13,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -23,6 +28,7 @@ import com.google.android.gms.location.Priority;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -38,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     private MushroomDatabase database;
     private MushroomDao mushroomDao;
+    private MushroomClassifier classifier;
 
     private FusedLocationProviderClient fusedLocationClient;
     private TextView tvTemp;
@@ -47,8 +54,12 @@ public class MainActivity extends AppCompatActivity {
     private final ActivityResultLauncher<Intent> cameraLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
-                if (result.getResultCode() == RESULT_OK) {
-                    Toast.makeText(this, "Zdjęcie zostało zrobione poprawnie!", Toast.LENGTH_SHORT).show();
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    Bundle extras = result.getData().getExtras();
+                    if (extras != null && extras.get("data") instanceof Bitmap) {
+                        Bitmap photo = (Bitmap) extras.get("data");
+                        rozpoznajGrzyba(photo);
+                    }
                 }
             }
     );
@@ -57,7 +68,13 @@ public class MainActivity extends AppCompatActivity {
             new ActivityResultContracts.GetContent(),
             uri -> {
                 if (uri != null) {
-                    Toast.makeText(this, "Wybrano zdjęcie z galerii!", Toast.LENGTH_SHORT).show();
+                    try {
+                        Bitmap bitmap = wczytajBitmapeZUri(uri);
+                        rozpoznajGrzyba(bitmap);
+                    } catch (IOException e) {
+                        Log.e(TAG, "Błąd wczytywania zdjęcia z galerii", e);
+                        Toast.makeText(this, "Nie udało się wczytać zdjęcia", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
     );
@@ -88,11 +105,91 @@ public class MainActivity extends AppCompatActivity {
 
         database = MushroomDatabase.getDatabase(this);
         mushroomDao = database.mushroomDao();
-
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        // Inicjalizacja modelu TensorFlow Lite
+        try {
+            classifier = new MushroomClassifier(this);
+        } catch (Throwable e) {
+            Log.e(TAG, "Błąd ładowania modelu TFLite", e);
+            Toast.makeText(this, "Błąd modelu: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
 
         sprawdzUprawnieniaIPobierzPogode();
         skonfigurujPrzyciski();
+    }
+
+    private Bitmap wczytajBitmapeZUri(Uri uri) throws IOException {
+        Bitmap rawBitmap;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            ImageDecoder.Source source = ImageDecoder.createSource(getContentResolver(), uri);
+            rawBitmap = ImageDecoder.decodeBitmap(source);
+        } else {
+            rawBitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+        }
+        return rawBitmap.copy(Bitmap.Config.ARGB_8888, false);
+    }
+
+    private void rozpoznajGrzyba(Bitmap bitmap) {
+        if (classifier == null) {
+            Toast.makeText(this, "Model AI nie jest gotowy", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Toast.makeText(this, "Analizuję zdjęcie...", Toast.LENGTH_SHORT).show();
+
+        Executors.newSingleThreadExecutor().execute(() -> {
+            Bitmap argbBitmap = bitmap.getConfig() == Bitmap.Config.ARGB_8888
+                    ? bitmap
+                    : bitmap.copy(Bitmap.Config.ARGB_8888, false);
+
+            MushroomClassifier.ClassificationResult result = classifier.classify(argbBitmap);
+
+            runOnUiThread(() -> pokazWynikKlasyfikacji(result));
+        });
+    }
+
+    private void pokazWynikKlasyfikacji(MushroomClassifier.ClassificationResult result) {
+        String sformatowanaNazwa = formatujNazweGatunku(result.label);
+        float procent = result.confidence * 100f;
+
+        String ostrzezenie;
+        if (result.label.contains("muchomor")) {
+            ostrzezenie = "\n\n⚠️ UWAGA: Wykryto gatunek potencjalnie trujący! Nie spożywać!";
+        } else if (procent < 70f) {
+            ostrzezenie = "\n\n⚠️ Niska pewność rozpoznania (<70%). Zweryfikuj gatunek w Atlasie lub z atlasem mykologicznym.";
+        } else {
+            ostrzezenie = "\n\nℹ️ Wynik ma charakter pomocniczy. Przed spożyciem zawsze upewnij się co do cech gatunkowych.";
+        }
+
+        new AlertDialog.Builder(this)
+                .setTitle("Wynik analizy MycoLens")
+                .setMessage(String.format(Locale.getDefault(),
+                        "Rozpoznany gatunek:\n%s\n\nPewność modelu: %.1f%%%s",
+                        sformatowanaNazwa, procent, ostrzezenie))
+                .setPositiveButton("Otwórz Atlas", (dialog, which) ->
+                        startActivity(new Intent(MainActivity.this, AtlasActivity.class)))
+                .setNegativeButton("Zamknij", null)
+                .show();
+    }
+
+    private String formatujNazweGatunku(String rawLabel) {
+        switch (rawLabel) {
+            case "borowik_szlachetny": return "Borowik szlachetny";
+            case "czubajka_kania": return "Czubajka kania";
+            case "gaska_zielonka": return "Gąska zielonka";
+            case "kozlarz_babka": return "Koźlarz babka";
+            case "maslak_zwyczajny": return "Maślak zwyczajny";
+            case "mleczaj_rydz": return "Mleczaj rydz";
+            case "muchomor_czerwonawy":
+            case "muchomor_czerwony": return "Muchomor czerwony";
+            case "muchomor_sromotnikowy": return "Muchomor sromotnikowy";
+            case "pieprznik_jadalny": return "Pieprznik jadalny (Kurka)";
+            case "podgrzybek_brunatny": return "Podgrzybek brunatny";
+            default:
+                String clean = rawLabel.replace("_", " ");
+                return clean.substring(0, 1).toUpperCase() + clean.substring(1);
+        }
     }
 
     private void skonfigurujPrzyciski() {
@@ -102,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                 cameraLauncher.launch(cameraIntent);
             } catch (Exception e) {
                 Log.e(TAG, "Nie można otworzyć aparatu", e);
-                Toast.makeText(this, "Nie można otworzyć aparatu", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Brak dostępnego aparatu na urządzeniu", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -215,6 +312,14 @@ public class MainActivity extends AppCompatActivity {
         }
         if (tvLocationName != null) {
             tvLocationName.setText("📍 " + miasto);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (classifier != null) {
+            classifier.close();
         }
     }
 }
